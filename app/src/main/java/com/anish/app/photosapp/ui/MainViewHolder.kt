@@ -13,16 +13,17 @@ class MainViewHolder : ViewModel() {
     val _imageList: MutableLiveData<ArrayList<PhotoModel>>
         get() = imageList
 
-    private fun generateTriangularSequence(n: Int): List<Int> {
+    private fun generateTriangularSequence(n: Int) {
         val sequence = mutableListOf<Int>()
         var sum = 0
 
+        //generating triangular indexes
         for (i in 1..n) {
             sum += i
             sequence.add(sum)
         }
 
-
+        //inserting photo according to sequence data
         for (j in 1..n) {
             if (sequence.contains(j)) {
                 newPhotoList.add(mPhotos[0])
@@ -32,19 +33,13 @@ class MainViewHolder : ViewModel() {
             }
         }
         imageList.postValue(newPhotoList)
-
-        return sequence
     }
 
     fun setTriangularSequence(n: Int, mPhoto: ArrayList<PhotoModel>) {
         newPhotoList.clear()
         this.mPhotos = mPhoto
-        val triangularSequence = generateTriangularSequence(n)
+        generateTriangularSequence(n)
 
-        println("Triangular Sequence:")
-        for (num in triangularSequence) {
-            println(num)
-        }
     }
 
 }

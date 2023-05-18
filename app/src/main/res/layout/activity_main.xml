@@ -10,21 +10,41 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="16dp"
         tools:context=".ui.MainActivity">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/imageRecyclerView"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="5dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@id/choosePhotoBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:spanCount="3"
-            tools:listitem="@layout/layout_photo_view" />
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/imageRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:paddingHorizontal="@dimen/m_10dp"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                tools:listitem="@layout/layout_photo_view" />
+
+            <TextView
+                android:id="@+id/addPhotos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:text="@string/please_upload_photo_from_select_photos_only_two_photos_will_be_displayed_on_triangular_sequence"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/choosePhotoBtn"
@@ -36,7 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageRecyclerView" />
+            app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

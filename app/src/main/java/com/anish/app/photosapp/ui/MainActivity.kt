@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -42,10 +43,10 @@ class MainActivity : AppCompatActivity() {
         }
         binding.imageRecyclerView.adapter = adapter
         imageListObserver()
+        checkUi()
     }
 
     private fun openGallery() {
-
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         intent.type = "image/*"
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
@@ -78,11 +79,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun imageListObserver() {
         viewModel._imageList.observe(this) {
-
             showPhotos.clear()
             showPhotos.addAll(it)
             adapter.notifyDataSetChanged()
+            checkUi()
         }
+
+
     }
 
     private val imagePickerLauncher =
@@ -101,7 +104,25 @@ class MainActivity : AppCompatActivity() {
                     viewModel.setTriangularSequence(arraySize, mPhoto)
                 } else {
                     Log.e(TAG, "more than 2 images selected")
+                    checkUi()
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Please long press photo to choose multiple photos.",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
         }
+
+    private fun checkUi() {
+        if (showPhotos.isEmpty()) {
+            binding.addPhotos.visibility = View.VISIBLE
+            binding.imageRecyclerView.visibility = View.GONE
+        } else {
+
+            binding.addPhotos.visibility = View.GONE
+            binding.imageRecyclerView.visibility = View.VISIBLE
+
+        }
+    }
 }

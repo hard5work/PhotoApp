@@ -9,9 +9,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/m_10dp"
             android:layout_marginVertical="@dimen/m_15dp"
-            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -41,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/m_10dp"
                 android:inputType="number"
+                android:maxLength="3"
                 android:textColor="@color/black" />
 
             <Button

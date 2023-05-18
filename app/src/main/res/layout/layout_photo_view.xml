@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="@dimen/_5dp"
+        android:elevation="@dimen/_5dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_5dp">
 
-        <TextView
-            android:id="@+id/indexNumber"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black" />
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_5dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="5dp"
-            android:layout_marginTop="@dimen/_5dp"
-            android:scaleType="centerCrop" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/indexNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:scaleType="centerCrop" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 </layout>

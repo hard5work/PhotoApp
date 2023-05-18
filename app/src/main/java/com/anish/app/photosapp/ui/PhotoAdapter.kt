@@ -29,7 +29,7 @@ class PhotoAdapter(
     override fun getItemCount(): Int = mList.size
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
         val mPhoto = mList[position]
-        val index = "Index : ${position + 1}"
+        val index = "Item: ${position + 1}"
         holder.bind.indexNumber.text = index
         Glide.with(context).load(mPhoto.photo).into(holder.bind.imageView)
     }
