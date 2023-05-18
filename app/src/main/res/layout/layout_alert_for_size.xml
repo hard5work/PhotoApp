@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/m_10dp"
+            android:layout_marginVertical="@dimen/m_15dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/m_10dp"
+                android:gravity="center"
+                android:text="@string/alert"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/m_10dp"
+                android:text="@string/please_enter_number_of_photo_you_want_to_see"
+                android:textColor="@color/black"
+                android:textStyle="normal" />
+
+            <EditText
+                android:id="@+id/enterNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/m_10dp"
+                android:inputType="number"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/doneButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/m_10dp"
+                android:paddingHorizontal="@dimen/m_30dp"
+                android:text="@string/done" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
