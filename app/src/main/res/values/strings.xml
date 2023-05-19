@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Photos App</string>
-    <string name="alert">Number of items</string>
+    <string name="alert">Size list for Triangular Sequence</string>
     <string name="please_enter_number_of_photo_you_want_to_see">Please enter size for the list.</string>
     <string name="done">Done</string>
     <string name="please_upload_photo_from_select_photos_only_two_photos_will_be_displayed_on_triangular_sequence">Please select two photo from \'Select Photos\'.</string>
